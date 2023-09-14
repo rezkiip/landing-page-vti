@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Insight from '../views/Insight.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/:eventPublicId',
-    name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '',
+        name: 'Insight',
+        component: Insight
+      }
+    ]
   }
 ]
 
