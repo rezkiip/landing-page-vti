@@ -7,6 +7,17 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    component: Home,
+    children: [
+      {
+        path: '',
+        name: 'Insight',
+        component: Insight
+      }
+    ]
+  },
+  {
     path: '/:eventPublicId',
     component: Home,
     children: [
