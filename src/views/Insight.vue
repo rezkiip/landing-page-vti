@@ -544,7 +544,7 @@ export default {
     },
   },
   async mounted() {
-    const eventPublicId = this.$route.params.eventPublicId + location.hash;
+    const eventPublicId = localStorage.getItem("eventPublicId");
     const inquiryResponse = (await eventService.getEventInsight(eventPublicId))
       .data;
 
